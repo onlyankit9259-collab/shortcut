@@ -331,6 +331,56 @@ footer{
     </table>
   </div>
 </section>
+ <section id="cmd-tricks">
+  <h2>CMD Tricks & Funny Animations</h2>
+
+  <h3>Basic CMD Commands</h3>
+
+  <input type="text" id="cmdSearchBox"
+         placeholder="Search CMD commands...">
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Work</th>
+          <th>Copy</th>
+        </tr>
+      </thead>
+      <tbody id="cmdShortcutList">
+        <tr><td>color 0A</td><td>Green CMD screen</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>title Shortcut Guru</td><td>Change CMD title</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>cls</td><td>Clear screen</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>date</td><td>Show date</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>time</td><td>Show time</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>tree</td><td>Show folder structure</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>dir</td><td>Show files and folders</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>echo Hello</td><td>Print Hello</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Funny Animations</h3>
+  <p>These animations need additional tools or an internet connection.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Command</th>
+          <th>Animation</th>
+          <th>Copy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>curl ascii.live/donut</td><td>Rotating ASCII Donut</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>curl ascii.live/forrest</td><td>ASCII Forest Animation</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+        <tr><td>curl ascii.live/nyan</td><td>Nyan Cat Animation</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
 <section id="about">
  <div class="card">
@@ -419,6 +469,32 @@ document.querySelectorAll(".excel-copy-btn").forEach(button => {
 
     try {
       await navigator.clipboard.writeText(shortcut);
+      this.textContent = "Copied!";
+    } catch {
+      this.textContent = "Failed";
+    }
+
+    setTimeout(() => {
+      this.textContent = "Copy";
+    }, 1200);
+  });
+});
+ // CMD Search
+document.getElementById("cmdSearchBox").addEventListener("input", function () {
+  const value = this.value.toLowerCase();
+
+  document.querySelectorAll("#cmd-tricks tbody tr").forEach(row => {
+    row.hidden = !row.textContent.toLowerCase().includes(value);
+  });
+});
+
+// CMD Copy Buttons
+document.querySelectorAll(".cmd-copy-btn").forEach(button => {
+  button.addEventListener("click", async function () {
+    const command = this.closest("tr").cells[0].textContent.trim();
+
+    try {
+      await navigator.clipboard.writeText(command);
       this.textContent = "Copied!";
     } catch {
       this.textContent = "Failed";
