@@ -253,6 +253,45 @@ footer{
  </table>
  </div>
 </section>
+ <section id="vscode-shortcuts">
+  <h2>VS Code Keyboard Shortcuts</h2>
+
+  <input
+    type="text"
+    id="vsCodeSearchBox"
+    class="search"
+    placeholder="Search VS Code shortcuts..."
+  >
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Shortcut</th>
+          <th>Work</th>
+          <th>Copy</th>
+        </tr>
+      </thead>
+      <tbody id="vsCodeShortcutList">
+        <tr><td>Ctrl + Shift + P</td><td>Command Palette</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + P</td><td>Quick Open</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + S</td><td>Save File</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + Shift + N</td><td>New Window</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + /</td><td>Comment / Uncomment</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Alt + ↑</td><td>Move Line Up</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Alt + ↓</td><td>Move Line Down</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Shift + Alt + ↓</td><td>Copy Line Down</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + D</td><td>Select Next Match</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + F</td><td>Find</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + H</td><td>Replace</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + Shift + F</td><td>Search in Files</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + B</td><td>Toggle Sidebar</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>F5</td><td>Start Debugging</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+        <tr><td>Ctrl + `</td><td>Open Terminal</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
 <section id="about">
  <div class="card">
@@ -298,6 +337,32 @@ document.querySelectorAll(".copy-btn").forEach(button=>{
    setTimeout(()=>this.textContent="Copy",1200);
   }
  });
+});
+ // VS Code Search
+document.getElementById("vsCodeSearchBox").addEventListener("input", function () {
+  const value = this.value.toLowerCase();
+
+  document.querySelectorAll("#vsCodeShortcutList tr").forEach(row => {
+    row.hidden = !row.textContent.toLowerCase().includes(value);
+  });
+});
+
+// VS Code Copy Buttons
+document.querySelectorAll(".vs-copy-btn").forEach(button => {
+  button.addEventListener("click", async function () {
+    const shortcut = this.closest("tr").cells[0].textContent;
+
+    try {
+      await navigator.clipboard.writeText(shortcut);
+      this.textContent = "Copied!";
+    } catch {
+      this.textContent = "Failed";
+    }
+
+    setTimeout(() => {
+      this.textContent = "Copy";
+    }, 1200);
+  });
 });
 </script>
 
