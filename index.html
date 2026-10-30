@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shortcut Guru</title>
+
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
+
 body{
- margin:0;
  font-family:Arial,sans-serif;
  background:#080808;
  color:white;
+ line-height:1.6;
 }
+
 header{
  background:#111;
  padding:20px 7%;
@@ -21,48 +24,74 @@ header{
  flex-wrap:wrap;
  border-bottom:2px solid #e50914;
 }
+
 .logo{font-size:25px;font-weight:bold}
 .logo span{color:#e50914}
+
 nav a{
  color:white;
  text-decoration:none;
  margin:8px;
 }
+
 nav a:hover{color:#e50914}
+
 .hero{
  text-align:center;
  padding:85px 15px;
- background:linear-gradient(135deg,#222,#080808);
+ background:linear-gradient(135deg,#242424,#080808);
 }
+
 .hero h1{font-size:42px}
 .hero h1 span{color:#e50914}
-.hero p{color:#ccc}
+.hero p{color:#ccc;margin:15px 0}
+
 .btn{
  display:inline-block;
  background:#e50914;
  color:white;
- padding:14px 24px;
+ padding:13px 23px;
  margin:10px;
  border-radius:8px;
  text-decoration:none;
  font-weight:bold;
+ border:1px solid #e50914;
 }
-.btn:hover{background:white;color:#e50914}
+
+.btn:hover{
+ background:white;
+ color:#e50914;
+}
+
 section{padding:45px 7%}
-h2{border-left:5px solid #e50914;padding-left:12px}
+
+h2{
+ border-left:5px solid #e50914;
+ padding-left:12px;
+ margin-bottom:25px;
+}
+
 .grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
  gap:20px;
 }
+
 .card{
  background:#171717;
  padding:25px;
  border:1px solid #333;
  border-radius:12px;
+ transition:.3s;
 }
-.card:hover{border-color:#e50914}
-.card p{color:#bbb}
+
+.card:hover{
+ border-color:#e50914;
+ transform:translateY(-4px);
+}
+
+.card p{color:#bbb;margin-top:8px}
+
 .search{
  width:100%;
  padding:14px;
@@ -73,11 +102,39 @@ h2{border-left:5px solid #e50914;padding-left:12px}
  margin:15px 0;
  font-size:16px;
 }
+
 .table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;background:#171717}
-th,td{padding:14px;text-align:left;border-bottom:1px solid #444}
+
+table{
+ width:100%;
+ border-collapse:collapse;
+ background:#171717;
+}
+
+th,td{
+ padding:13px;
+ text-align:left;
+ border-bottom:1px solid #444;
+}
+
 th{background:#e50914}
+
 tr:hover{background:#292929}
+
+.copy-btn{
+ background:#e50914;
+ color:white;
+ border:none;
+ padding:7px 13px;
+ border-radius:5px;
+ cursor:pointer;
+}
+
+.copy-btn:hover{
+ background:white;
+ color:#e50914;
+}
+
 footer{
  text-align:center;
  padding:25px;
@@ -85,13 +142,16 @@ footer{
  color:#aaa;
  border-top:2px solid #e50914;
 }
+
 @media(max-width:600px){
- .hero h1{font-size:32px}
- header{gap:15px}
+ .hero h1{font-size:30px}
+ header{gap:12px}
  nav a{display:inline-block}
+ section{padding:35px 5%}
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -105,29 +165,39 @@ footer{
 </header>
 
 <main>
+
 <section class="hero" id="home">
  <h1>WELCOME TO <span>SHORTCUT GURU</span></h1>
  <p>Learn Computer Tips, MS Word Tricks and Keyboard Shortcuts.</p>
+
  <a class="btn" href="#shortcuts">Explore Shortcuts</a>
- <a class="btn" href="https://youtube.com/@shortcutguru_sg"
- target="_blank" rel="noopener noreferrer">▶ SUBSCRIBE ON YOUTUBE</a>
+
+ <a class="btn"
+ href="https://youtube.com/@shortcutguru_sg"
+ target="_blank" rel="noopener noreferrer">
+ ▶ SUBSCRIBE ON YOUTUBE
+ </a>
 </section>
 
 <section id="categories">
  <h2>Explore Categories</h2>
+
  <div class="grid">
   <div class="card">
    <h3>📝 MS Word</h3>
    <p>Learn MS Word shortcuts and tricks.</p>
   </div>
+
   <div class="card">
    <h3>⌨️ Keyboard Shortcuts</h3>
    <p>Work faster with keyboard shortcuts.</p>
   </div>
+
   <div class="card">
    <h3>💻 Computer Tips</h3>
    <p>Useful computer and laptop tips.</p>
   </div>
+
   <div class="card">
    <h3>🎬 Video Tutorials</h3>
    <p>Learn through easy tutorials.</p>
@@ -137,35 +207,48 @@ footer{
 
 <section id="shortcuts">
  <h2>MS Word Keyboard Shortcuts</h2>
- <input class="search" id="searchBox" placeholder="Search shortcuts...">
+
+ <input
+ class="search"
+ id="searchBox"
+ placeholder="Search shortcuts..."
+ aria-label="Search shortcuts">
+
  <div class="table-wrap">
  <table>
- <thead><tr><th>Shortcut</th><th>Work</th></tr></thead>
+ <thead>
+ <tr>
+  <th>Shortcut</th>
+  <th>Work</th>
+  <th>Copy</th>
+ </tr>
+ </thead>
+
  <tbody id="shortcutList">
- <tr><td>Ctrl + A</td><td>Select All</td></tr>
- <tr><td>Ctrl + B</td><td>Bold</td></tr>
- <tr><td>Ctrl + C</td><td>Copy</td></tr>
- <tr><td>Ctrl + D</td><td>Font Dialog</td></tr>
- <tr><td>Ctrl + E</td><td>Center Align</td></tr>
- <tr><td>Ctrl + F</td><td>Find</td></tr>
- <tr><td>Ctrl + H</td><td>Replace</td></tr>
- <tr><td>Ctrl + I</td><td>Italic</td></tr>
- <tr><td>Ctrl + J</td><td>Justify</td></tr>
- <tr><td>Ctrl + K</td><td>Insert Link</td></tr>
- <tr><td>Ctrl + L</td><td>Left Align</td></tr>
- <tr><td>Ctrl + N</td><td>New Document</td></tr>
- <tr><td>Ctrl + O</td><td>Open Document</td></tr>
- <tr><td>Ctrl + P</td><td>Print</td></tr>
- <tr><td>Ctrl + R</td><td>Right Align</td></tr>
- <tr><td>Ctrl + S</td><td>Save</td></tr>
- <tr><td>Ctrl + U</td><td>Underline</td></tr>
- <tr><td>Ctrl + V</td><td>Paste</td></tr>
- <tr><td>Ctrl + X</td><td>Cut</td></tr>
- <tr><td>Ctrl + Y</td><td>Redo</td></tr>
- <tr><td>Ctrl + Z</td><td>Undo</td></tr>
- <tr><td>Ctrl + Enter</td><td>Page Break</td></tr>
- <tr><td>Ctrl + Home</td><td>Go to Document Start</td></tr>
- <tr><td>Ctrl + End</td><td>Go to Document End</td></tr>
+ <tr><td>Ctrl + A</td><td>Select All</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + B</td><td>Bold</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + C</td><td>Copy</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + D</td><td>Font Dialog</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + E</td><td>Center Align</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + F</td><td>Find</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + H</td><td>Replace</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + I</td><td>Italic</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + J</td><td>Justify</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + K</td><td>Insert Link</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + L</td><td>Left Align</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + N</td><td>New Document</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + O</td><td>Open Document</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + P</td><td>Print</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + R</td><td>Right Align</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + S</td><td>Save</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + U</td><td>Underline</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + V</td><td>Paste</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + X</td><td>Cut</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Y</td><td>Redo</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Z</td><td>Undo</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Enter</td><td>Page Break</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Home</td><td>Document Start</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + End</td><td>Document End</td><td><button class="copy-btn">Copy</button></td></tr>
  </tbody>
  </table>
  </div>
@@ -175,10 +258,15 @@ footer{
  <div class="card">
   <h2>About Shortcut Guru</h2>
   <p>Shortcut Guru helps you learn computer tricks, keyboard shortcuts and MS Word in easy language.</p>
-  <a class="btn" href="https://youtube.com/@shortcutguru_sg"
-  target="_blank" rel="noopener noreferrer">Visit YouTube Channel</a>
+
+  <a class="btn"
+  href="https://youtube.com/@shortcutguru_sg"
+  target="_blank" rel="noopener noreferrer">
+  Visit YouTube Channel
+  </a>
  </div>
 </section>
+
 </main>
 
 <footer>
@@ -186,13 +274,29 @@ footer{
 </footer>
 
 <script>
-const searchBox=document.getElementById("searchBox");
-const rows=document.querySelectorAll("#shortcutList tr");
+const searchBox = document.getElementById("searchBox");
+const rows = document.querySelectorAll("#shortcutList tr");
 
 searchBox.addEventListener("input",function(){
- const value=this.value.toLowerCase();
+ const value = this.value.toLowerCase();
+
  rows.forEach(row=>{
-  row.hidden=!row.textContent.toLowerCase().includes(value);
+  row.hidden = !row.textContent.toLowerCase().includes(value);
+ });
+});
+
+document.querySelectorAll(".copy-btn").forEach(button=>{
+ button.addEventListener("click",async function(){
+  const shortcut = this.closest("tr").cells[0].textContent;
+
+  try{
+   await navigator.clipboard.writeText(shortcut);
+   this.textContent = "Copied!";
+   setTimeout(()=>this.textContent="Copy",1200);
+  }catch(error){
+   this.textContent = "Failed";
+   setTimeout(()=>this.textContent="Copy",1200);
+  }
  });
 });
 </script>
