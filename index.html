@@ -1,135 +1,241 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shortcut Guru | Computer Tricks</title>
-  <meta name="description" content="Learn MS Word shortcuts, keyboard tricks and computer tips in Hindi.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shortcut Guru | Computer Tips</title>
+
+<style>
+:root {
+  --bg: #0b1020;
+  --card: #151d31;
+  --text: #f4f7ff;
+  --muted: #b8c3d9;
+  --red: #ff4057;
+  --blue: #56c7ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+header {
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: #10172a;
+  border-bottom: 1px solid #29334b;
+}
+.logo { font-size: 24px; font-weight: bold; }
+.logo span { color: var(--red); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; }
+a { color: var(--blue); }
+nav a { color: var(--text); text-decoration: none; }
+nav a:hover { color: var(--red); }
+.hero {
+  padding: 75px 7%;
+  background: radial-gradient(ellipse at top right, #24365b, var(--bg) 65%);
+}
+.hero h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.15; }
+.hero h1 span { color: var(--red); }
+.hero p { color: var(--muted); max-width: 650px; }
+.btn {
+  display: inline-block;
+  margin: 10px 8px 0 0;
+  padding: 12px 20px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: bold;
+  background: var(--red);
+  color: white;
+}
+.btn.secondary { background: #263650; border: 1px solid #465775; }
+section { padding: 45px 7%; }
+h2 { font-size: 30px; margin-top: 0; }
+.subtitle { color: var(--muted); }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--card);
+  padding: 22px;
+  border: 1px solid #293650;
+  border-radius: 14px;
+}
+.card h3 { margin-top: 0; }
+.card p { color: var(--muted); }
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #34405a;
+}
+th { background: #202b43; }
+tr:hover { background: #18243a; }
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  background: var(--card);
+}
+.search {
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0 18px;
+  border-radius: 8px;
+  border: 1px solid #465775;
+  background: #151d31;
+  color: white;
+  font-size: 16px;
+}
+footer {
+  padding: 28px 7%;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid #29334b;
+}
+</style>
 </head>
+
 <body>
+<header>
+  <div class="logo">Shortcut <span>Guru.</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#shortcuts">Shortcuts</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
 
-  <header>
-    <a class="logo" href="#">⌨️ Shortcut Guru</a>
+<main>
+<section class="hero" id="home">
+  <p>LEARN SMART · WORK FAST</p>
+  <h1>Master Your <span>Keyboard!</span> 🚀</h1>
+  <p>
+    MS Word shortcuts, computer tricks aur useful keyboard tips
+    Hindi mein seekho — aasaan tareeke se.
+  </p>
+  <a class="btn" href="#shortcuts">Explore Shortcuts →</a>
+  <a class="btn secondary"
+     href="https://youtube.com/@shortcutguru_sg"
+     target="_blank" rel="noopener noreferrer">
+     ▶ Subscribe on YouTube
+  </a>
+</section>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#shortcuts">Shortcuts</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
+<section id="categories">
+  <h2>Explore Categories</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>📝 MS Word</h3>
+      <p>Word ke important shortcuts aur formatting tips.</p>
+    </div>
+    <div class="card">
+      <h3>⌨️ Keyboard Shortcuts</h3>
+      <p>Apna kaam jaldi karne ke smart tareeke.</p>
+    </div>
+    <div class="card">
+      <h3>💻 Computer Tips</h3>
+      <p>Windows aur laptop ki useful tips.</p>
+    </div>
+    <div class="card">
+      <h3>🎬 Video Tutorials</h3>
+      <p>Step-by-step tutorials aur Shorts.</p>
+    </div>
+  </div>
+</section>
 
-  <main>
-    <section id="home" class="hero">
-      <p class="tag">LEARN SMART • WORK FAST</p>
-      <h1>Master Your Keyboard! 🚀</h1>
-      <p>
-        MS Word shortcuts, computer tricks aur useful
-        keyboard tips Hindi mein seekho.
-      </p>
-      <a class="btn" href="#shortcuts">Explore Shortcuts →</a>
-    </section>
+<section id="shortcuts">
+  <h2>MS Word Keyboard Shortcuts</h2>
+  <p class="subtitle">Shortcut ya uska kaam search karo.</p>
+  <input class="search" id="searchBox"
+         type="search" placeholder="Search: Copy, Save, Bold...">
+         <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Shortcut</th><th>Kaam</th></tr>
+      </thead>
+      <tbody id="shortcutList">
+        <tr><td>Ctrl + C</td><td>Copy karna</td></tr>
+        <tr><td>Ctrl + V</td><td>Paste karna</td></tr>
+        <tr><td>Ctrl + X</td><td>Cut karna</td></tr>
+        <tr><td>Ctrl + A</td><td>Sab select karna</td></tr>
+        <tr><td>Ctrl + S</td><td>File save karna</td></tr>
+        <tr><td>Ctrl + P</td><td>Print karna</td></tr>
+        <tr><td>Ctrl + Z</td><td>Last action undo karna</td></tr>
+        <tr><td>Ctrl + Y</td><td>Action redo karna</td></tr>
+        <tr><td>Ctrl + B</td><td>Text bold karna</td></tr>
+        <tr><td>Ctrl + I</td><td>Text italic karna</td></tr>
+        <tr><td>Ctrl + U</td><td>Underline lagana</td></tr>
+        <tr><td>Ctrl + F</td><td>Text find karna</td></tr>
+        <tr><td>Ctrl + H</td><td>Find and replace</td></tr>
+        <tr><td>Ctrl + N</td><td>New document</td></tr>
+        <tr><td>Ctrl + O</td><td>Document open karna</td></tr>
+        <tr><td>Ctrl + K</td><td>Hyperlink insert karna</td></tr>
+        <tr><td>Ctrl + E</td><td>Text center align</td></tr>
+        <tr><td>Ctrl + L</td><td>Left align</td></tr>
+        <tr><td>Ctrl + R</td><td>Right align</td></tr>
+        <tr><td>Ctrl + J</td><td>Justify alignment</td></tr>
+        <tr><td>Ctrl + Enter</td><td>Page break insert karna</td></tr>
+        <tr><td>Ctrl + Home</td><td>Document ke start par jaana</td></tr>
+        <tr><td>Ctrl + End</td><td>Document ke end par jaana</td></tr>
+        <tr><td>Ctrl + ]</td><td>Font size 1 point badhana</td></tr>
+        <tr><td>Ctrl + [</td><td>Font size 1 point ghatana</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p id="noResults" hidden>Koi matching shortcut nahi mila.</p>
+</section>
 
-    <section id="categories" class="section">
-      <h2>Explore Categories</h2>
+<section id="about">
+  <div class="card">
+    <h2>About Shortcut Guru</h2>
+    <p>
+      Shortcut Guru par computer tips, MS Word shortcuts,
+      keyboard tricks aur useful tutorials simple Hindi mein seekhein.
+    </p>
+    <a class="btn"
+       href="https://youtube.com/@shortcutguru_sg"
+       target="_blank" rel="noopener noreferrer">
+       ▶ Visit YouTube Channel
+    </a>
+  </div>
+</section>
+</main>
 
-      <div class="grid">
-        <article class="card">
-          <h3>📝 MS Word</h3>
-          <p>Word ke important shortcuts aur tricks.</p>
-        </article>
+<footer>
+  <p>© <span id="year"></span> Shortcut Guru · Learn Smart, Work Fast</p>
+</footer>
 
-        <article class="card">
-          <h3>⌨️ Keyboard Shortcuts</h3>
-          <p>Apna kaam jaldi karne ke smart tareeke.</p>
-        </article>
+<script>
+const searchBox = document.getElementById("searchBox");
+const rows = [...document.querySelectorAll("#shortcutList tr")];
+const noResults = document.getElementById("noResults");
 
-        <article class="card">
-          <h3>💻 Computer Tips</h3>
-          <p>Windows aur laptop ki useful tips.</p>
-        </article>
+searchBox.addEventListener("input", () => {
+  const query = searchBox.value.toLowerCase().trim();
+  let visible = 0;
 
-        <article class="card">
-          <h3>🎬 Video Tutorials</h3>
-          <p>Step-by-step tutorials aur Shorts.</p>
-        </article>
-      </div>
-    </section>
+  rows.forEach(row => {
+    const match = row.textContent.toLowerCase().includes(query);
+    row.hidden = !match;
+    if (match) visible++;
+  });
 
-    <section id="shortcuts" class="section">
-      <h2>Popular Keyboard Shortcuts</h2>
+  noResults.hidden = visible !== 0;
+});
 
-      <input
-        type="search"
-        id="search"
-        placeholder="Search shortcut, jaise Copy..."
-        aria-label="Search shortcuts"
-      >
-
-      <div id="shortcut-list" class="grid">
-        <article class="card shortcut">
-          <h3>Copy Text</h3>
-          <kbd>Ctrl + C</kbd>
-          <p>Selected text ko copy karein.</p>
-        </article>
-
-        <article class="card shortcut">
-          <h3>Paste Text</h3>
-          <kbd>Ctrl + V</kbd>
-          <p>Copied text ko paste karein.</p>
-        </article>
-
-        <article class="card shortcut">
-          <h3>Select All</h3>
-          <kbd>Ctrl + A</kbd>
-          <p>Saara text select karein.</p>
-        </article>
-
-        <article class="card shortcut">
-          <h3>Save File</h3>
-          <kbd>Ctrl + S</kbd>
-          <p>Apni file save karein.</p>
-        </article>
-
-        <article class="card shortcut">
-          <h3>Undo</h3>
-          <kbd>Ctrl + Z</kbd>
-          <p>Pichhla action undo karein.</p>
-        </article>
-
-        <article class="card shortcut">
-          <h3>Bold Text</h3>
-          <kbd>Ctrl + B</kbd>
-          <p>Text ko bold karein.</p>
-        </article>
-      </div>
-
-      <p id="no-results" hidden>Koi shortcut nahi mila.</p>
-    </section>
-    <input type="checkbox"
-    name="agree" value="yes"> <p>agree</p>
-    <input type="range"
-    name="volume" min="0" max="100">
-    <section id="about" class="section about">
-      <h2>About Shortcut Guru</h2>
-      <p>
-        Shortcut Guru ek learning platform hai jahan
-        beginners aasani se computer shortcuts, MS Word
-        aur technology tricks seekh sakte hain.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Shortcut Guru | Learn Something New Every Day</p>
-    <a href="https://www.youtube.com/shortcutguru_sg" target="_blank"
-       rel="noopener noreferrer">subscribe shortcutguru_sg</a>
-  </footer>
-
-  <script src="script.js"></script>
-  <input type="submit"
-  value="submit">
-
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
 </body>
 </html>
