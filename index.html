@@ -403,6 +403,32 @@ document.querySelectorAll(".vs-copy-btn").forEach(button => {
     }, 1200);
   });
 });
+ // Excel Search
+document.getElementById("excelSearchBox").addEventListener("input", function () {
+  const value = this.value.toLowerCase();
+
+  document.querySelectorAll("#excelShortcutList tr").forEach(row => {
+    row.hidden = !row.textContent.toLowerCase().includes(value);
+  });
+});
+
+// Excel Copy Buttons
+document.querySelectorAll(".excel-copy-btn").forEach(button => {
+  button.addEventListener("click", async function () {
+    const shortcut = this.closest("tr").cells[0].textContent;
+
+    try {
+      await navigator.clipboard.writeText(shortcut);
+      this.textContent = "Copied!";
+    } catch {
+      this.textContent = "Failed";
+    }
+
+    setTimeout(() => {
+      this.textContent = "Copy";
+    }, 1200);
+  });
+});
 </script>
 
 </body>
