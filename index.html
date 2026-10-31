@@ -437,6 +437,89 @@ document.querySelectorAll(".copy-btn").forEach(button=>{
  });
 });
 </script>
+<style>
+.pdf-section {
+    padding: 30px 15px;
+    background: #f5f7fb;
+    border-radius: 15px;
+    text-align: center;
+    margin: 25px auto;
+}
 
+.pdf-section h2 {
+    color: #172554;
+    margin-bottom: 20px;
+}
+
+.pdf-card {
+    background: white;
+    padding: 18px;
+    margin: 15px auto;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.pdf-card h3 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.pdf-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 5px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.preview-btn {
+    background: #2563eb;
+}
+
+.download-btn {
+    background: #16a34a;
+}
+</style>
+
+<section class="pdf-section">
+
+<h2>📚 Study Materials & PDF Notes</h2>
+
+<div class="pdf-card">
+<h3>MS Word PDF</h3>
+<a class="pdf-btn preview-btn"
+href="pdf/pdf/pdf/ms-word.pdf" target="_blank">Preview PDF</a>
+<a class="pdf-btn download-btn"
+href="pdf/pdf/pdf/ms-word.pdf" download>Download PDF</a>
+</div>
+
+<div class="pdf-card">
+<h3>MS Excel PDF</h3>
+<a class="pdf-btn preview-btn"
+href="pdf/pdf/pdf/ms-excel.pdf" target="_blank">Preview PDF</a>
+<a class="pdf-btn download-btn"
+href="pdf/pdf/pdf/ms-excel.pdf" download>Download PDF</a>
+</div>
+
+<div class="pdf-card">
+<h3>VS Code PDF</h3>
+<a class="pdf-btn preview-btn"
+href="pdf/pdf/pdf/vscode.pdf" target="_blank">Preview PDF</a>
+<a class="pdf-btn download-btn"
+href="pdf/pdf/pdf/vscode.pdf" download>Download PDF</a>
+</div>
+
+<div class="pdf-card">
+<h3>CMD PDF</h3>
+<a class="pdf-btn preview-btn"
+href="pdf/pdf/pdf/cmd.pdf" target="_blank">Preview PDF</a>
+<a class="pdf-btn download-btn"
+href="pdf/pdf/pdf/cmd.pdf" download>Download PDF</a>
+</div>
+
+</section>
 </body>
 </html>
