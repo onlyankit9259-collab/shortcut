@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="hi">
+
+<html lang="en">
 <head>
- <meta name="google-site-verification" content="s42c1BBwbXy0_zk3o8mBrV-YeMk_odjTnnc-SFE66HI" />
- 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shortcut Guru</title>
@@ -58,6 +56,7 @@ nav a:hover{color:#e50914}
  text-decoration:none;
  font-weight:bold;
  border:1px solid #e50914;
+ cursor:pointer;
 }
 
 .btn:hover{
@@ -120,7 +119,6 @@ th,td{
 }
 
 th{background:#e50914}
-
 tr:hover{background:#292929}
 
 .copy-btn{
@@ -132,17 +130,30 @@ tr:hover{background:#292929}
  cursor:pointer;
 }
 
-.copy-btn:hover{
- background:white;
- color:#e50914;
-}
-
 footer{
  text-align:center;
  padding:25px;
  background:#111;
  color:#aaa;
  border-top:2px solid #e50914;
+}
+
+.pdf-card{
+ background:#171717;
+ border:1px solid #333;
+ border-radius:12px;
+ padding:22px;
+}
+
+.pdf-card h3{margin-bottom:10px}
+.pdf-card p{color:#bbb}
+.pdf-card iframe{
+ width:100%;
+ height:350px;
+ border:1px solid #444;
+ border-radius:8px;
+ margin-top:15px;
+ background:white;
 }
 
 @media(max-width:600px){
@@ -162,6 +173,7 @@ footer{
   <a href="#home">Home</a>
   <a href="#categories">Categories</a>
   <a href="#shortcuts">Shortcuts</a>
+  <a href="#pdfs">PDF Downloads</a>
   <a href="#about">About</a>
  </nav>
 </header>
@@ -174,10 +186,9 @@ footer{
 
  <a class="btn" href="#shortcuts">Explore Shortcuts</a>
 
- <a class="btn"
- href="https://youtube.com/@shortcutguru_sg"
+ <a class="btn" href="https://youtube.com/@shortcutguru_sg"
  target="_blank" rel="noopener noreferrer">
- ▶ SUBSCRIBE ON YOUTUBE
+ ▶️ SUBSCRIBE ON YOUTUBE
  </a>
 </section>
 
@@ -189,17 +200,14 @@ footer{
    <h3>📝 MS Word</h3>
    <p>Learn MS Word shortcuts and tricks.</p>
   </div>
-
   <div class="card">
    <h3>⌨️ Keyboard Shortcuts</h3>
    <p>Work faster with keyboard shortcuts.</p>
   </div>
-
   <div class="card">
    <h3>💻 Computer Tips</h3>
    <p>Useful computer and laptop tips.</p>
   </div>
-
   <div class="card">
    <h3>🎬 Video Tutorials</h3>
    <p>Learn through easy tutorials.</p>
@@ -209,23 +217,13 @@ footer{
 
 <section id="shortcuts">
  <h2>MS Word Keyboard Shortcuts</h2>
-
- <input
- class="search"
- id="searchBox"
- placeholder="Search shortcuts..."
- aria-label="Search shortcuts">
-
- <div class="table-wrap">
+ <input class="search" id="searchBox"
+ placeholder="Search Word shortcuts...">
+[10/31/2026 8:01 PM] Document ankit 👍🏻: <div class="table-wrap">
  <table>
  <thead>
- <tr>
-  <th>Shortcut</th>
-  <th>Work</th>
-  <th>Copy</th>
- </tr>
+ <tr><th>Shortcut</th><th>Work</th><th>Copy</th></tr>
  </thead>
-
  <tbody id="shortcutList">
  <tr><td>Ctrl + A</td><td>Select All</td><td><button class="copy-btn">Copy</button></td></tr>
  <tr><td>Ctrl + B</td><td>Bold</td><td><button class="copy-btn">Copy</button></td></tr>
@@ -249,148 +247,138 @@ footer{
  <tr><td>Ctrl + Y</td><td>Redo</td><td><button class="copy-btn">Copy</button></td></tr>
  <tr><td>Ctrl + Z</td><td>Undo</td><td><button class="copy-btn">Copy</button></td></tr>
  <tr><td>Ctrl + Enter</td><td>Page Break</td><td><button class="copy-btn">Copy</button></td></tr>
- <tr><td>Ctrl + Home</td><td>Document Start</td><td><button class="copy-btn">Copy</button></td></tr>
- <tr><td>Ctrl + End</td><td>Document End</td><td><button class="copy-btn">Copy</button></td></tr>
  </tbody>
  </table>
  </div>
 </section>
- <section id="vscode-shortcuts">
-  <h2>VS Code Keyboard Shortcuts</h2>
 
-  <input
-    type="text"
-    id="vsCodeSearchBox"
-    class="search"
-    placeholder="Search VS Code shortcuts..."
-  >
+<section id="vscode-shortcuts">
+ <h2>VS Code Keyboard Shortcuts</h2>
+ <input class="search" id="vsCodeSearchBox"
+ placeholder="Search VS Code shortcuts...">
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Shortcut</th>
-          <th>Work</th>
-          <th>Copy</th>
-        </tr>
-      </thead>
-      <tbody id="vsCodeShortcutList">
-        <tr><td>Ctrl + Shift + P</td><td>Command Palette</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + P</td><td>Quick Open</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + S</td><td>Save File</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + Shift + N</td><td>New Window</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + /</td><td>Comment / Uncomment</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Alt + ↑</td><td>Move Line Up</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Alt + ↓</td><td>Move Line Down</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Shift + Alt + ↓</td><td>Copy Line Down</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + D</td><td>Select Next Match</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + F</td><td>Find</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + H</td><td>Replace</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + Shift + F</td><td>Search in Files</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + B</td><td>Toggle Sidebar</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>F5</td><td>Start Debugging</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + `</td><td>Open Terminal</td><td><button class="copy-btn vs-copy-btn">Copy</button></td></tr>
-      </tbody>
-    </table>
-  </div>
+ <div class="table-wrap">
+ <table>
+ <thead><tr><th>Shortcut</th><th>Work</th><th>Copy</th></tr></thead>
+ <tbody id="vsCodeShortcutList">
+ <tr><td>Ctrl + Shift + P</td><td>Command Palette</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + P</td><td>Quick Open</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + S</td><td>Save File</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Shift + N</td><td>New Window</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + /</td><td>Comment / Uncomment</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Alt + ↑</td><td>Move Line Up</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Alt + ↓</td><td>Move Line Down</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Shift + Alt + ↓</td><td>Copy Line Down</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + D</td><td>Select Next Match</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + F</td><td>Find</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + H</td><td>Replace</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Shift + F</td><td>Search in Files</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + B</td><td>Toggle Sidebar</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>F5</td><td>Start Debugging</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + `</td><td>Open Terminal</td><td><button class="copy-btn">Copy</button></td></tr>
+ </tbody>
+ </table>
+ </div>
 </section>
- <section id="excel-shortcuts">
-  <h2>MS Excel Keyboard Shortcuts</h2>
+[10/31/2026 8:01 PM] Document ankit 👍🏻: <section id="excel-shortcuts">
+ <h2>MS Excel Keyboard Shortcuts</h2>
+ <input class="search" id="excelSearchBox"
+ placeholder="Search Excel shortcuts...">
 
-  <input
-    type="text"
-    id="excelSearchBox"
-    placeholder="Search Excel shortcuts..."
-  >
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Shortcut</th>
-          <th>Work</th>
-          <th>Copy</th>
-        </tr>
-      </thead>
-
-      <tbody id="excelShortcutList">
-        <tr><td>Ctrl + C</td><td>Copy</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + V</td><td>Paste</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + X</td><td>Cut</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + Z</td><td>Undo</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + Y</td><td>Redo</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + S</td><td>Save Workbook</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + A</td><td>Select All</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + F</td><td>Find</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + H</td><td>Replace</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + B</td><td>Bold</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + I</td><td>Italic</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + U</td><td>Underline</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>F2</td><td>Edit Active Cell</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Alt + =</td><td>AutoSum</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-        <tr><td>Ctrl + 1</td><td>Format Cells</td><td><button class="excel-copy-btn">Copy</button></td></tr>
-      </tbody>
-    </table>
-  </div>
+ <div class="table-wrap">
+ <table>
+ <thead><tr><th>Shortcut</th><th>Work</th><th>Copy</th></tr></thead>
+ <tbody id="excelShortcutList">
+ <tr><td>Ctrl + C</td><td>Copy</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + V</td><td>Paste</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + X</td><td>Cut</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Z</td><td>Undo</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + Y</td><td>Redo</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + S</td><td>Save Workbook</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + A</td><td>Select All</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + F</td><td>Find</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + H</td><td>Replace</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + B</td><td>Bold</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + I</td><td>Italic</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + U</td><td>Underline</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>F2</td><td>Edit Active Cell</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Alt + =</td><td>AutoSum</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>Ctrl + 1</td><td>Format Cells</td><td><button class="copy-btn">Copy</button></td></tr>
+ </tbody>
+ </table>
+ </div>
 </section>
- <section id="cmd-tricks">
-  <h2>CMD Tricks & Funny Animations</h2>
 
-  <h3>Basic CMD Commands</h3>
+<section id="cmd-tricks">
+ <h2>CMD Tricks & Commands</h2>
+ <input class="search" id="cmdSearchBox"
+ placeholder="Search CMD commands...">
 
-  <input type="text" id="cmdSearchBox"
-         placeholder="Search CMD commands...">
+ <div class="table-wrap">
+ <table>
+ <thead><tr><th>Command</th><th>Work</th><th>Copy</th></tr></thead>
+ <tbody id="cmdShortcutList">
+ <tr><td>color 0A</td><td>Green CMD screen</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>title Shortcut Guru</td><td>Change CMD title</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>cls</td><td>Clear screen</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>date</td><td>Show date</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>time</td><td>Show time</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>tree</td><td>Show folder structure</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>dir</td><td>Show files and folders</td><td><button class="copy-btn">Copy</button></td></tr>
+ <tr><td>echo Hello</td><td>Print Hello</td><td><button class="copy-btn">Copy</button></td></tr>
+ </tbody>
+ </table>
+ </div>
+</section>
 
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Command</th>
-          <th>Work</th>
-          <th>Copy</th>
-        </tr>
-      </thead>
-      <tbody id="cmdShortcutList">
-        <tr><td>color 0A</td><td>Green CMD screen</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>title Shortcut Guru</td><td>Change CMD title</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>cls</td><td>Clear screen</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>date</td><td>Show date</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>time</td><td>Show time</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>tree</td><td>Show folder structure</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>dir</td><td>Show files and folders</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>echo Hello</td><td>Print Hello</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-      </tbody>
-    </table>
+<!-- PDF SECTION -->
+<section id="pdfs">
+ <h2>📚 Download Shortcuts PDF</h2>
+ <p style="color:#bbb;margin-bottom:20px">
+ View and download separate PDF files for each category.
+ </p>
+
+ <div class="grid">
+
+  <div class="pdf-card">
+   <h3>📝 MS Word PDF</h3>
+   <p>MS Word Keyboard Shortcuts</p>
+   <a class="btn" href="pdf/ms-word.pdf" target="_blank">View PDF</a>
+   <a class="btn" href="pdf/ms-word.pdf" download>Download PDF</a>
+   <iframe src="pdf/ms-word.pdf" title="MS Word PDF Preview"></iframe>
   </div>
 
-  <h3>Funny Animations</h3>
-  <p>These animations need additional tools or an internet connection.</p>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Command</th>
-          <th>Animation</th>
-          <th>Copy</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>curl ascii.live/donut</td><td>Rotating ASCII Donut</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>curl ascii.live/forrest</td><td>ASCII Forest Animation</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-        <tr><td>curl ascii.live/nyan</td><td>Nyan Cat Animation</td><td><button class="cmd-copy-btn">Copy</button></td></tr>
-      </tbody>
-    </table>
+  <div class="pdf-card">
+   <h3>📊 MS Excel PDF</h3>
+   <p>MS Excel Keyboard Shortcuts</p>
+   <a class="btn" href="pdf/ms-excel.pdf" target="_blank">View PDF</a>
+   <a class="btn" href="pdf/ms-excel.pdf" download>Download PDF</a>
+   <iframe src="pdf/ms-excel.pdf" title="Excel PDF Preview"></iframe>
   </div>
+
+  <div class="pdf-card">
+   <h3>💻 VS Code PDF</h3>
+   <p>VS Code Keyboard Shortcuts</p>
+   <a class="btn" href="pdf/vscode.pdf" target="_blank">View PDF</a>
+   <a class="btn" href="pdf/vscode.pdf" download>Download PDF</a>
+   <iframe src="pdf/vscode.pdf" title="VS Code PDF Preview"></iframe>
+  </div>
+[10/31/2026 8:01 PM] Document ankit 👍🏻: <div class="pdf-card">
+   <h3>⌨️ CMD Commands PDF</h3>
+   <p>CMD Tricks and Commands</p>
+   <a class="btn" href="pdf/cmd.pdf" target="_blank">View PDF</a>
+   <a class="btn" href="pdf/cmd.pdf" download>Download PDF</a>
+   <iframe src="pdf/cmd.pdf" title="CMD PDF Preview"></iframe>
+  </div>
+
+ </div>
 </section>
 
 <section id="about">
  <div class="card">
   <h2>About Shortcut Guru</h2>
   <p>Shortcut Guru helps you learn computer tricks, keyboard shortcuts and MS Word in easy language.</p>
-
-  <a class="btn"
-  href="https://youtube.com/@shortcutguru_sg"
+  <a class="btn" href="https://youtube.com/@shortcutguru_sg"
   target="_blank" rel="noopener noreferrer">
   Visit YouTube Channel
   </a>
@@ -403,133 +391,53 @@ footer{
  <p>© 2026 Shortcut Guru | Learn Smart, Work Fast</p>
 </footer>
 
-<script>
-const searchBox = document.getElementById("searchBox");
-const rows = document.querySelectorAll("#shortcutList tr");
-
-searchBox.addEventListener("input",function(){
- const value = this.value.toLowerCase();
-
- rows.forEach(row=>{
-  row.hidden = !row.textContent.toLowerCase().includes(value);
- });
-});
-
-document.querySelectorAll(".copy-btn").forEach(button=>{
- button.addEventListener("click",async function(){
-  const shortcut = this.closest("tr").cells[0].textContent;
-
-  try{
-   await navigator.clipboard.writeText(shortcut);
-   this.textContent = "Copied!";
-   setTimeout(()=>this.textContent="Copy",1200);
-  }catch(error){
-   this.textContent = "Failed";
-   setTimeout(()=>this.textContent="Copy",1200);
-  }
- });
-});
- // VS Code Search
-document.getElementById("vsCodeSearchBox").addEventListener("input", function () {
-  const value = this.value.toLowerCase();
-
-  document.querySelectorAll("#vsCodeShortcutList tr").forEach(row => {
-    row.hidden = !row.textContent.toLowerCase().includes(value);
-  });
-});
-
-// VS Code Copy Buttons
-document.querySelectorAll(".vs-copy-btn").forEach(button => {
-  button.addEventListener("click", async function () {
-    const shortcut = this.closest("tr").cells[0].textContent;
-
-    try {
-      await navigator.clipboard.writeText(shortcut);
-      this.textContent = "Copied!";
-    } catch {
-      this.textContent = "Failed";
-    }
-
-    setTimeout(() => {
-      this.textContent = "Copy";
-    }, 1200);
-  });
-});
- // Excel Search
-document.getElementById("excelSearchBox").addEventListener("input", function () {
-  const value = this.value.toLowerCase();
-
-  document.querySelectorAll("#excelShortcutList tr").forEach(row => {
-    row.hidden = !row.textContent.toLowerCase().includes(value);
-  });
-});
-
-// Excel Copy Buttons
-document.querySelectorAll(".excel-copy-btn").forEach(button => {
-  button.addEventListener("click", async function () {
-    const shortcut = this.closest("tr").cells[0].textContent;
-
-    try {
-      await navigator.clipboard.writeText(shortcut);
-      this.textContent = "Copied!";
-    } catch {
-      this.textContent = "Failed";
-    }
-
-    setTimeout(() => {
-      this.textContent = "Copy";
-    }, 1200);
-  });
-});
- // CMD Search
-document.getElementById("cmdSearchBox").addEventListener("input", function () {
-  const value = this.value.toLowerCase();
-
-  document.querySelectorAll("#cmd-tricks tbody tr").forEach(row => {
-    row.hidden = !row.textContent.toLowerCase().includes(value);
-  });
-});
-
-// CMD Copy Buttons
-document.querySelectorAll(".cmd-copy-btn").forEach(button => {
-  button.addEventListener("click", async function () {
-    const command = this.closest("tr").cells[0].textContent.trim();
-
-    try {
-      await navigator.clipboard.writeText(command);
-      this.textContent = "Copied!";
-    } catch {
-      this.textContent = "Failed";
-    }
-
-    setTimeout(() => {
-      this.textContent = "Copy";
-    }, 1200);
-  });
-});
-</script>
- <div style="text-align:center; width:100%; margin:25px auto;">
-
-<a href="https://www.instagram.com/Shortcutguru_sg/"
-target="_blank"
-rel="noopener noreferrer"
-style="
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-padding:14px 28px;
+<div style="text-align:center;width:100%;margin:25px auto">
+<a href="https://www.instagram.com/shortcutguru_sg/"
+target="_blank" rel="noopener noreferrer"
+style="display:inline-flex;align-items:center;justify-content:center;
+gap:10px;padding:14px 28px;
 background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-size:17px;
-font-weight:bold;
-font-family:Arial,sans-serif;
-">
+color:white;text-decoration:none;border-radius:30px;
+font-size:17px;font-weight:bold">
 📸 Follow Us on Instagram
 </a>
-
 </div>
+
+<script>
+// Search function
+function setupSearch(inputId, listId){
+ const input=document.getElementById(inputId);
+ const rows=document.querySelectorAll("#"+listId+" tr");
+
+ input.addEventListener("input",function(){
+  const value=this.value.toLowerCase();
+  rows.forEach(row=>{
+   row.hidden=!row.textContent.toLowerCase().includes(value);
+  });
+ });
+}
+
+setupSearch("searchBox","shortcutList");
+setupSearch("vsCodeSearchBox","vsCodeShortcutList");
+setupSearch("excelSearchBox","excelShortcutList");
+setupSearch("cmdSearchBox","cmdShortcutList");
+
+// Copy buttons
+document.querySelectorAll(".copy-btn").forEach(button=>{
+ button.addEventListener("click",async function(){
+  const value=this.closest("tr").cells[0].textContent.trim();
+
+  try{
+   await navigator.clipboard.writeText(value);
+   this.textContent="Copied!";
+  }catch(error){
+   this.textContent="Failed";
+  }
+
+  setTimeout(()=>this.textContent="Copy",1200);
+ });
+});
+</script>
+
 </body>
 </html>
