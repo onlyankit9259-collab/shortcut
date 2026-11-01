@@ -1,0 +1,22 @@
+{
+  "name": "Shortcut Guru",
+  "short_name": "Shortcut Guru",
+  "start_url": "/shortcut/",
+  "scope": "/shortcut/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#e50914",
+  "description": "Shortcut Guru - Learn Computer Shortcuts",
+  "icons": [
+    {
+      "src": "/shortcut/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/shortcut/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
