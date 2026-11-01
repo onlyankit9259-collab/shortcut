@@ -481,6 +481,18 @@ document.querySelectorAll(".copy-btn").forEach(button=>{
  });
 });
 </script>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register(
+      "/shortcut/service-worker.js"
+    ).then(() => {
+      console.log("Shortcut Guru App Ready!");
+    }).catch((error) => {
+      console.log("Service Worker Error:", error);
+    });
+  });
+}
+</script>
 </body>
 </html>
