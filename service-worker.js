@@ -1,4 +1,4 @@
-const CACHE_NAME = "shortcut-guru-v5";
+const CACHE_NAME = "shortcut-guru-v6";
 
 const FILES_TO_CACHE = [
   "/shortcut/",
