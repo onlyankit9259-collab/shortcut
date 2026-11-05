@@ -1,4 +1,4 @@
-const CACHE_NAME = "shortcut-guru-v8";
+const CACHE_NAME = "shortcut-guru-v9";
 
 const FILES_TO_CACHE = [
   "/shortcut/",
@@ -9,7 +9,10 @@ const FILES_TO_CACHE = [
   "/shortcut/icons/icon-512.png"
 ];
 
+// New version takes over right away (no waiting for every tab to close),
+// so phones that keep tabs open for days still get updates.
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(FILES_TO_CACHE);
@@ -25,7 +28,7 @@ self.addEventListener("activate", (event) => {
           .filter((key) => key !== CACHE_NAME)
           .map((key) => caches.delete(key))
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
 
