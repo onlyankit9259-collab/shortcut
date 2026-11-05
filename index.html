@@ -134,6 +134,20 @@ tr:hover{background:#292929}
  cursor:pointer;
 }
 
+
+.install-btn{font-size:16px;font-family:inherit}
+.install-btn[hidden],.install-help[hidden]{display:none}
+.install-help{
+ max-width:420px;
+ margin:10px auto 0;
+ padding:12px 15px;
+ background:#171717;
+ border:1px solid #e50914;
+ border-radius:8px;
+ color:#ddd;
+ font-size:15px;
+}
+
 footer{
  text-align:center;
  padding:25px;
@@ -194,6 +208,11 @@ footer{
  target="_blank" rel="noopener noreferrer">
  ▶️ SUBSCRIBE ON YOUTUBE
  </a>
+
+ <button class="btn install-btn" id="installBtn" type="button" hidden>
+ 📲 INSTALL APP
+ </button>
+ <p class="install-help" id="installHelp" hidden></p>
 </section>
 
 <section id="categories">
@@ -483,6 +502,48 @@ document.querySelectorAll(".copy-btn").forEach(button=>{
   setTimeout(()=>this.textContent="Copy",1200);
  });
 });
+</script>
+<script>
+// Install App button
+(function(){
+ const btn=document.getElementById("installBtn");
+ const help=document.getElementById("installHelp");
+ let deferredPrompt=null;
+
+ const isInstalled=window.matchMedia("(display-mode: standalone)").matches
+  || window.navigator.standalone===true;
+ if(isInstalled) return;
+
+ // Android / Chrome / Edge: browser gives an install prompt
+ window.addEventListener("beforeinstallprompt",(event)=>{
+  event.preventDefault();
+  deferredPrompt=event;
+  btn.hidden=false;
+ });
+
+ // iPhone / iPad Safari: no install prompt, show steps instead
+ const ua=navigator.userAgent;
+ const isIOS=/iphone|ipad|ipod/i.test(ua)
+  || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+ if(isIOS) btn.hidden=false;
+
+ btn.addEventListener("click",async()=>{
+  if(deferredPrompt){
+   deferredPrompt.prompt();
+   await deferredPrompt.userChoice;
+   deferredPrompt=null;
+   btn.hidden=true;
+  }else if(isIOS){
+   help.textContent="iPhone par: neeche Share (⬆️) button dabao, phir \"Add to Home Screen\" chuno.";
+   help.hidden=false;
+  }
+ });
+
+ window.addEventListener("appinstalled",()=>{
+  btn.hidden=true;
+  help.hidden=true;
+ });
+})();
 </script>
 <script>
 if ("serviceWorker" in navigator) {
