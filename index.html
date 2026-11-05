@@ -1,10 +1,47 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
- <link rel="manifest" href="/shortcut/manifest.json">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shortcut Guru</title>
+<title>Shortcut Guru – Computer Keyboard Shortcuts in Hindi | MS Word, Excel, VS Code, CMD</title>
+<meta name="description" content="Shortcut Guru: MS Word, MS Excel, VS Code keyboard shortcuts aur CMD tricks Hindi mein seekho. Search karo, ek click mein copy karo, free PDF notes download karo.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onlyankit9259-collab.github.io/shortcut/">
+<link rel="sitemap" type="application/xml" href="https://onlyankit9259-collab.github.io/shortcut/sitemap.xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shortcut Guru">
+<meta property="og:title" content="Shortcut Guru – Computer Keyboard Shortcuts in Hindi">
+<meta property="og:description" content="MS Word, Excel, VS Code shortcuts aur CMD tricks Hindi mein. Free PDF notes aur Android app.">
+<meta property="og:url" content="https://onlyankit9259-collab.github.io/shortcut/">
+<meta property="og:image" content="https://onlyankit9259-collab.github.io/shortcut/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="manifest" href="/shortcut/manifest.json">
+<meta name="theme-color" content="#e50914">
+<link rel="icon" type="image/png" href="/shortcut/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/shortcut/icons/icon-192.png">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "Shortcut Guru",
+ "alternateName": "SHORTCUT GURU",
+ "url": "https://onlyankit9259-collab.github.io/shortcut/",
+ "description": "Computer keyboard shortcuts, MS Word, Excel, VS Code aur CMD tricks Hindi mein.",
+ "inLanguage": ["hi", "en"],
+ "publisher": {
+  "@type": "Organization",
+  "name": "Shortcut Guru",
+  "logo": "https://onlyankit9259-collab.github.io/shortcut/icons/icon-512.png",
+  "sameAs": [
+   "https://youtube.com/@shortcutguru_sg",
+   "https://www.instagram.com/shortcutguru_sg/"
+  ]
+ }
+}
+</script>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -131,6 +168,20 @@ tr:hover{background:#292929}
  cursor:pointer;
 }
 
+
+.install-btn{font-size:16px;font-family:inherit}
+.install-btn[hidden],.install-help[hidden]{display:none}
+.install-help{
+ max-width:420px;
+ margin:10px auto 0;
+ padding:12px 15px;
+ background:#171717;
+ border:1px solid #e50914;
+ border-radius:8px;
+ color:#ddd;
+ font-size:15px;
+}
+
 footer{
  text-align:center;
  padding:25px;
@@ -184,6 +235,7 @@ footer{
 <section class="hero" id="home">
  <h1>WELCOME TO <span>SHORTCUT GURU</span></h1>
  <p>Learn Computer Tips, MS Word Tricks and Keyboard Shortcuts.</p>
+ <p>Computer shortcut keys Hindi mein seekho – MS Word, Excel, VS Code aur CMD.</p>
 
  <a class="btn" href="#shortcuts">Explore Shortcuts</a>
 
@@ -191,6 +243,15 @@ footer{
  target="_blank" rel="noopener noreferrer">
  ▶️ SUBSCRIBE ON YOUTUBE
  </a>
+
+ <a class="btn" id="apkBtn" href="app/ShortcutGuru.apk" download="ShortcutGuru.apk">
+ 🤖 DOWNLOAD ANDROID APP
+ </a>
+
+ <button class="btn install-btn" id="installBtn" type="button" hidden>
+ 📲 INSTALL APP
+ </button>
+ <p class="install-help" id="installHelp" hidden></p>
 </section>
 
 <section id="categories">
@@ -480,6 +541,48 @@ document.querySelectorAll(".copy-btn").forEach(button=>{
   setTimeout(()=>this.textContent="Copy",1200);
  });
 });
+</script>
+<script>
+// Install App button
+(function(){
+ const btn=document.getElementById("installBtn");
+ const help=document.getElementById("installHelp");
+ let deferredPrompt=null;
+
+ const isInstalled=window.matchMedia("(display-mode: standalone)").matches
+  || window.navigator.standalone===true;
+ if(isInstalled) return;
+
+ // Android / Chrome / Edge: browser gives an install prompt
+ window.addEventListener("beforeinstallprompt",(event)=>{
+  event.preventDefault();
+  deferredPrompt=event;
+  btn.hidden=false;
+ });
+
+ // iPhone / iPad Safari: no install prompt, show steps instead
+ const ua=navigator.userAgent;
+ const isIOS=/iphone|ipad|ipod/i.test(ua)
+  || (navigator.platform==="MacIntel" && navigator.maxTouchPoints>1);
+ if(isIOS) btn.hidden=false;
+
+ btn.addEventListener("click",async()=>{
+  if(deferredPrompt){
+   deferredPrompt.prompt();
+   await deferredPrompt.userChoice;
+   deferredPrompt=null;
+   btn.hidden=true;
+  }else if(isIOS){
+   help.textContent="iPhone par: neeche Share (⬆️) button dabao, phir \"Add to Home Screen\" chuno.";
+   help.hidden=false;
+  }
+ });
+
+ window.addEventListener("appinstalled",()=>{
+  btn.hidden=true;
+  help.hidden=true;
+ });
+})();
 </script>
 <script>
 if ("serviceWorker" in navigator) {

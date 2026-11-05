@@ -1,9 +1,11 @@
-const CACHE_NAME = "shortcut-guru-v1";
+const CACHE_NAME = "shortcut-guru-v5";
 
 const FILES_TO_CACHE = [
   "/shortcut/",
   "/shortcut/index.html",
-  "/shortcut/manifest.json"
+  "/shortcut/manifest.json",
+  "/shortcut/icons/icon-192.png",
+  "/shortcut/icons/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
