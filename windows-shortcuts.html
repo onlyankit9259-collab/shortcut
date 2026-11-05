@@ -138,10 +138,18 @@ document.querySelectorAll(".copy-btn").forEach(function(b){
   var btn=this; setTimeout(function(){ btn.textContent="Copy"; },1200);
  });
 });
-if("serviceWorker" in navigator){
- window.addEventListener("load",function(){
-  navigator.serviceWorker.register("/shortcut/service-worker.js").catch(function(){});
- });
+if ("serviceWorker" in navigator) {
+  // Reload once when an updated service worker takes over an open page.
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (hadController && !reloaded) { reloaded = true; window.location.reload(); }
+  });
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/shortcut/service-worker.js", { updateViaCache: "none" })
+      .then((reg) => reg.update())
+      .catch((error) => console.log("Service Worker Error:", error));
+  });
 }
 </script>
 </body>
