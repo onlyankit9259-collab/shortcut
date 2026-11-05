@@ -283,9 +283,11 @@ def check_alignment(path, zf):
 
 
 def site_files():
-    files = [(n, False) for n in sorted(os.listdir(ROOT)) if n.endswith(".html")]
+    skip = {"404.html", "shortcutguru.html.html"}  # website-only redirect pages
+    files = [(n, False) for n in sorted(os.listdir(ROOT)) if n.endswith(".html") and n not in skip]
     for folder in ("pdf", "icons", "assets"):
-        for dirpath, _, names in os.walk(os.path.join(ROOT, folder)):
+        for dirpath, dirs, names in os.walk(os.path.join(ROOT, folder)):
+            dirs[:] = [d for d in dirs if d != "pdf"]  # pdf/pdf/pdf = old-link copies
             for n in sorted(names):
                 rel = os.path.relpath(os.path.join(dirpath, n), ROOT)
                 if n.lower().endswith(".pdf"):
