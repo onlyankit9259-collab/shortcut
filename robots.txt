@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onlyankit9259-collab.github.io/shortcut/sitemap.xml
