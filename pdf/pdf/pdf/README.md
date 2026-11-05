@@ -1,1 +1,0 @@
-shortcut guru pdf files
