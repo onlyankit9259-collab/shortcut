@@ -73,8 +73,17 @@ public class MainActivity extends Activity {
     private boolean handleUrl(String url) {
         if (url.startsWith(ASSET_PREFIX)) {
             String path = url.substring(ASSET_PREFIX.length());
+            String fragment = "";
             int cut = path.indexOf('#');
-            if (cut >= 0) path = path.substring(0, cut);
+            if (cut >= 0) {
+                fragment = path.substring(cut);
+                path = path.substring(0, cut);
+            }
+            if (path.isEmpty()) {
+                // "Home" links point at the folder ("./"); open index.html.
+                webView.loadUrl(HOME + fragment);
+                return true;
+            }
             if (path.toLowerCase().endsWith(".pdf")) {
                 openPdf(path);
                 return true;

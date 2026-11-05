@@ -283,14 +283,14 @@ def check_alignment(path, zf):
 
 
 def site_files():
-    files = [("index.html", False)]
-    for folder in ("pdf", "icons"):
+    files = [(n, False) for n in sorted(os.listdir(ROOT)) if n.endswith(".html")]
+    for folder in ("pdf", "icons", "assets"):
         for dirpath, _, names in os.walk(os.path.join(ROOT, folder)):
             for n in sorted(names):
                 rel = os.path.relpath(os.path.join(dirpath, n), ROOT)
                 if n.lower().endswith(".pdf"):
                     files.append((rel, True))  # stored: AssetProvider uses openFd
-                elif n.lower().endswith(".png"):
+                elif n.lower().endswith((".png", ".css")):
                     files.append((rel, False))
     return files
 

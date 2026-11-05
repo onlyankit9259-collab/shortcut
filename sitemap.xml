@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://onlyankit9259-collab.github.io/shortcut/</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url><loc>https://onlyankit9259-collab.github.io/shortcut/pdf/ms-word.pdf</loc></url>
-  <url><loc>https://onlyankit9259-collab.github.io/shortcut/pdf/ms-excel.pdf</loc></url>
-  <url><loc>https://onlyankit9259-collab.github.io/shortcut/pdf/vscode.pdf</loc></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/</loc><lastmod>2026-11-05</lastmod><priority>1.0</priority></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/ms-word-shortcuts.html</loc><lastmod>2026-11-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/ms-excel-shortcuts.html</loc><lastmod>2026-11-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/windows-shortcuts.html</loc><lastmod>2026-11-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/chrome-shortcuts.html</loc><lastmod>2026-11-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/vscode-shortcuts.html</loc><lastmod>2026-11-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/cmd-commands.html</loc><lastmod>2026-11-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/alt-codes.html</loc><lastmod>2026-11-05</lastmod><priority>0.9</priority></url>
   <url><loc>https://onlyankit9259-collab.github.io/shortcut/pdf/cmd.pdf</loc></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/pdf/ms-excel.pdf</loc></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/pdf/ms-word.pdf</loc></url>
+  <url><loc>https://onlyankit9259-collab.github.io/shortcut/pdf/vscode.pdf</loc></url>
 </urlset>
