@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page nahi mila – Shortcut Guru</title>
+<script>
+// GitHub Pages shows this page for any missing address under /shortcut/.
+// Send old or mistyped links to the right page instead of an error.
+(function () {
+  var base = "/shortcut/";
+  var path = location.pathname;
+  var rest = path.indexOf(base) === 0 ? path.slice(base.length) : "";
+  var lower = rest.toLowerCase();
+  var target = base;
+
+  var pdf = lower.match(/([a-z-]+\.pdf)$/);
+  var known = {
+    "shortcutguru.html.html": "", "shortcutguru.html": "", "index.htm": "",
+    "word": "ms-word-shortcuts.html", "ms-word": "ms-word-shortcuts.html",
+    "excel": "ms-excel-shortcuts.html", "ms-excel": "ms-excel-shortcuts.html",
+    "windows": "windows-shortcuts.html", "chrome": "chrome-shortcuts.html",
+    "vscode": "vscode-shortcuts.html", "vs-code": "vscode-shortcuts.html",
+    "cmd": "cmd-commands.html", "alt": "alt-codes.html", "alt-codes": "alt-codes.html",
+    "app": "app/ShortcutGuru.apk", "apk": "app/ShortcutGuru.apk"
+  };
+  var key = lower.replace(/\/+$/, "");
+
+  if (pdf) {
+    target = base + "pdf/" + pdf[1];            // old pdf/pdf/pdf/x.pdf links
+  } else if (known.hasOwnProperty(key)) {
+    target = base + known[key];
+  }
+  location.replace(target + location.search + location.hash);
+})();
+</script>
+<style>
+body{margin:0;background:#080808;color:#fff;font-family:Arial,sans-serif;text-align:center;padding:60px 20px}
+a{color:#e50914;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>SHORTCUT <span style="color:#e50914">GURU</span></h1>
+<p>Yeh page nahi mila. Aapko home page par le ja rahe hain…</p>
+<p><a href="/shortcut/">Home page kholo</a></p>
+</body>
+</html>
